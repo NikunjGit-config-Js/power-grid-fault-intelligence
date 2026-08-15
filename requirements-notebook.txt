@@ -1,0 +1,20 @@
+# ============================================================================
+#  Reproduce the original research notebook
+#  Install with:  pip install -r requirements-notebook.txt
+#
+#  This preserves the original dependency set from the repository. It is NOT
+#  needed to run the Streamlit app -- use requirements.txt for that.
+# ============================================================================
+numpy<2.0
+pandas
+scipy
+matplotlib
+seaborn
+scikit-learn
+imbalanced-learn
+tensorflow==2.16.1
+xgboost
+lightgbm
+catboost
+joblib
+ipykernel

@@ -1,0 +1,21 @@
+# ============================================================================
+#  Production requirements for Power Grid Fault Intelligence
+#  Install with:  pip install -r requirements.txt
+#
+#  These are the minimal direct dependencies for the production inference path.
+#  Versions are pinned to those verified during development.
+# ============================================================================
+
+# --- frontend ---
+streamlit>=1.50
+
+# --- data handling ---
+numpy>=2.0,<3
+pandas>=2.2
+
+# --- ML pipeline ---
+# scikit-learn pinned exactly: the production pipeline artifact records
+# _sklearn_version == 1.8.0. Unpickling across versions is not guaranteed.
+scikit-learn==1.8.0
+joblib>=1.4
+lightgbm>=4.0

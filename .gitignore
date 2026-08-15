@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Local secrets/config
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Generated/cache files
+.pytest_cache/
+catboost_info/
+*.log
+
+# Local OpenCode workspace
+.opencode/
+opencode.jsonc
+results/streamlit/stdout.txt
+results/streamlit/stderr.txt
+results/test_2/keras_tuner/
+results/test_4/keras_tuner/

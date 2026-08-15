@@ -1,0 +1,116 @@
+{
+  "Decision Tree": {
+    "max_depth": 13,
+    "min_samples_split": 4,
+    "min_samples_leaf": 3,
+    "max_features": null,
+    "criterion": "entropy",
+    "class_weight": "balanced"
+  },
+  "Random Forest": {
+    "n_estimators": 288,
+    "max_depth": 20,
+    "min_samples_split": 17,
+    "min_samples_leaf": 4,
+    "max_features": "log2",
+    "bootstrap": false,
+    "class_weight": null
+  },
+  "Extra Trees": {
+    "n_estimators": 293,
+    "max_depth": 17,
+    "min_samples_split": 6,
+    "min_samples_leaf": 2,
+    "max_features": null,
+    "bootstrap": true,
+    "class_weight": "balanced"
+  },
+  "Bagging": {
+    "n_estimators": 44,
+    "max_samples": 0.9753571532049581,
+    "max_features": 0.8659969709057025,
+    "bootstrap": true,
+    "bootstrap_features": true
+  },
+  "AdaBoost": {
+    "n_estimators": 124,
+    "learning_rate": 0.4258888210290082
+  },
+  "Gradient Boosting": {
+    "n_estimators": 64,
+    "learning_rate": 0.19030368381735815,
+    "max_depth": 7,
+    "subsample": 0.8540362888980227,
+    "min_samples_split": 2,
+    "min_samples_leaf": 10
+  },
+  "XGBoost": {
+    "n_estimators": 144,
+    "learning_rate": 0.2536999076681772,
+    "max_depth": 8,
+    "min_child_weight": 6,
+    "subsample": 0.5780093202212182,
+    "colsample_bytree": 0.5779972601681014,
+    "gamma": 0.2904180608409973,
+    "reg_alpha": 8.661761457749352,
+    "reg_lambda": 6.011150117432088
+  },
+  "HistGradientBoosting": {
+    "max_iter": 144,
+    "learning_rate": 0.2536999076681772,
+    "max_depth": 8,
+    "min_samples_leaf": 12,
+    "max_leaf_nodes": 24,
+    "l2_regularization": 1.5599452033620265
+  },
+  "LightGBM": {
+    "n_estimators": 144,
+    "learning_rate": 0.2536999076681772,
+    "max_depth": 12,
+    "num_leaves": 64,
+    "min_child_samples": 12,
+    "subsample": 0.5779972601681014,
+    "colsample_bytree": 0.5290418060840998,
+    "reg_alpha": 8.661761457749352,
+    "reg_lambda": 6.011150117432088
+  },
+  "CatBoost": {
+    "iterations": 144,
+    "learning_rate": 0.2536999076681772,
+    "depth": 8,
+    "l2_leaf_reg": 5.986584841970366,
+    "bagging_temperature": 1.5601864044243652,
+    "random_strength": 1.5599452033620265
+  },
+  "Logistic Regression": {
+    "C": 0.008260808399079604,
+    "penalty": "l2",
+    "class_weight": "balanced"
+  },
+  "KNN": {
+    "n_neighbors": 5,
+    "weights": "uniform",
+    "p": 5
+  },
+  "SVM": {
+    "C": 7.969454818643936,
+    "kernel": "rbf"
+  },
+  "MLP Neural Network": {
+    "n_layers": 3,
+    "units_0": 224,
+    "activation_0": "relu",
+    "batch_norm_0": false,
+    "dropout_0": 0.5,
+    "units_1": 192,
+    "activation_1": "tanh",
+    "batch_norm_1": true,
+    "dropout_1": 0.4,
+    "units_2": 192,
+    "activation_2": "tanh",
+    "batch_norm_2": true,
+    "dropout_2": 0.0,
+    "optimizer": "adam",
+    "learning_rate": 0.00044279363365000874
+  }
+}

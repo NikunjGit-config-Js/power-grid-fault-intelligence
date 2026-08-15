@@ -1,0 +1,184 @@
+{
+  "model": "LightGBM",
+  "pipeline": "PhysicsWithCurrentSymmetry -> LGBMClassifier",
+  "feature_set": "D1 (20 features)",
+  "scaler": "None (tree-based)",
+  "locked_test_size": 1180,
+  "development_set_size": 6681,
+  "optuna_trials": 30,
+  "optuna_best_cv_f1": 0.9993916709817812,
+  "best_hyperparameters": {
+    "n_estimators": 144,
+    "max_depth": 8,
+    "learning_rate": 0.27422797079747635,
+    "num_leaves": 13,
+    "min_child_samples": 50
+  },
+  "class_names": [
+    "3P-G",
+    "LG A+B-G",
+    "LL-G BC",
+    "Line-to-Line AB",
+    "No Fault",
+    "Three-Phase"
+  ],
+  "class_to_idx": {
+    "3P-G": 0,
+    "LG A+B-G": 1,
+    "LL-G BC": 2,
+    "Line-to-Line AB": 3,
+    "No Fault": 4,
+    "Three-Phase": 5
+  },
+  "metrics": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "cohen_kappa": 1.0,
+    "roc_auc_ovr": 1.0,
+    "pr_auc_ovr": 1.0,
+    "fault_detection_recall": 1.0,
+    "false_alarm_rate": 0.0
+  },
+  "per_class_metrics": {
+    "3P-G": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 170
+    },
+    "LG A+B-G": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 170
+    },
+    "LL-G BC": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 151
+    },
+    "Line-to-Line AB": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 169
+    },
+    "No Fault": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 355
+    },
+    "Three-Phase": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 165
+    }
+  },
+  "confusion_matrix_raw": [
+    [
+      170,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      170,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      151,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      169,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      355,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      165
+    ]
+  ],
+  "confusion_matrix_normalized": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "confusion_matrix_formula": "Row-normalized: cm[i,j] / cm[i,:].sum()",
+  "fault_detection_recall_formula": "recall(fault_mask_true, fault_mask_pred) where fault = any class except No Fault",
+  "false_alarm_rate_formula": "false_alarms / n_no_fault where false_alarm = predict(fault) when actual is No Fault"
+}

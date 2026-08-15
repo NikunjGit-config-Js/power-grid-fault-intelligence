@@ -1,0 +1,107 @@
+{
+  "model_name": "LightGBM",
+  "experiment": "Final Retraining",
+  "evaluation_source": "Locked Final-Test Evaluation",
+  "feature_set": "D1 (20 features)",
+  "raw_inputs": [
+    "Ia",
+    "Ib",
+    "Ic",
+    "Va",
+    "Vb",
+    "Vc"
+  ],
+  "expected_input_features": 6,
+  "d1_feature_names": [
+    "Ia",
+    "Ib",
+    "Ic",
+    "Va",
+    "Vb",
+    "Vc",
+    "I0",
+    "Ialpha",
+    "Ibeta",
+    "Imag",
+    "V0",
+    "Valpha",
+    "Vbeta",
+    "Vmag",
+    "Za",
+    "Zb",
+    "Zc",
+    "I_max",
+    "I_mid",
+    "I_min"
+  ],
+  "d1_feature_count": 20,
+  "classes": [
+    "3P-G",
+    "LG A+B-G",
+    "LL-G BC",
+    "Line-to-Line AB",
+    "No Fault",
+    "Three-Phase"
+  ],
+  "class_to_idx": {
+    "3P-G": 0,
+    "LG A+B-G": 1,
+    "LL-G BC": 2,
+    "Line-to-Line AB": 3,
+    "No Fault": 4,
+    "Three-Phase": 5
+  },
+  "class_mapping": {
+    "3P-G": 0,
+    "LG A+B-G": 1,
+    "LL-G BC": 2,
+    "Line-to-Line AB": 3,
+    "No Fault": 4,
+    "Three-Phase": 5
+  },
+  "idx_to_class": {
+    "0": "3P-G",
+    "1": "LG A+B-G",
+    "2": "LL-G BC",
+    "3": "Line-to-Line AB",
+    "4": "No Fault",
+    "5": "Three-Phase"
+  },
+  "hyperparameters": {
+    "n_estimators": 144,
+    "max_depth": 8,
+    "learning_rate": 0.27422797079747635,
+    "num_leaves": 13,
+    "min_child_samples": 50
+  },
+  "accuracy": 1.0,
+  "macro_f1": 1.0,
+  "fault_detection_recall": 1.0,
+  "false_alarm_rate": 0.0,
+  "locked_test_metrics": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "cohen_kappa": 1.0,
+    "roc_auc_ovr": 1.0,
+    "pr_auc_ovr": 1.0,
+    "fault_detection_recall": 1.0,
+    "false_alarm_rate": 0.0
+  },
+  "training_set_size": 7861,
+  "random_state": 42,
+  "sklearn_version": "1.8.0",
+  "lightgbm_version": "4.7.0",
+  "artifact_size_bytes": 581709,
+  "artifact_size_mb": 0.5548,
+  "artifact_sha256": "a771efb5f8b72f4b5e14d6734886a249fe31f0d7457f19c07cedbe367ae9c168",
+  "class_distribution": {
+    "3P-G": 1133,
+    "LG A+B-G": 1134,
+    "LL-G BC": 1004,
+    "Line-to-Line AB": 1129,
+    "No Fault": 2365,
+    "Three-Phase": 1096
+  },
+  "note": "Production model trained on complete dataset. Metrics are from locked test evaluation, not this model."
+}

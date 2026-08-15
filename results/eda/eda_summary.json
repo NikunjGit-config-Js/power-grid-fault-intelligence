@@ -1,0 +1,99 @@
+{
+  "dataset": {
+    "shape": [
+      7861,
+      12
+    ],
+    "columns": [
+      "G",
+      "C",
+      "B",
+      "A",
+      "Ia",
+      "Ib",
+      "Ic",
+      "Va",
+      "Vb",
+      "Vc",
+      "fault_code",
+      "fault_label"
+    ],
+    "n_classes": 6,
+    "class_distribution": {
+      "No Fault": 2365,
+      "LL-G BC": 1004,
+      "Three-Phase": 1096,
+      "Line-to-Line AB": 1129,
+      "LG A+B-G": 1134,
+      "3P-G": 1133
+    }
+  },
+  "data_quality": {
+    "missing_values": 0,
+    "duplicate_rows": 0,
+    "infinite_values": 0,
+    "constant_columns": [],
+    "nzv_columns": []
+  },
+  "outlier_analysis": {
+    "Ia": {
+      "n_outliers": 1802,
+      "pct_outliers": 22.92,
+      "classification": "physically_meaningful_fault_extremes"
+    },
+    "Ib": {
+      "n_outliers": 1216,
+      "pct_outliers": 15.47,
+      "classification": "physically_meaningful_fault_extremes"
+    },
+    "Ic": {
+      "n_outliers": 2524,
+      "pct_outliers": 32.11,
+      "classification": "physically_meaningful_fault_extremes"
+    },
+    "Va": {
+      "n_outliers": 1160,
+      "pct_outliers": 14.76,
+      "classification": "mixed"
+    },
+    "Vb": {
+      "n_outliers": 71,
+      "pct_outliers": 0.9,
+      "classification": "mixed"
+    },
+    "Vc": {
+      "n_outliers": 0,
+      "pct_outliers": 0.0,
+      "classification": "physically_meaningful_fault_extremes"
+    }
+  },
+  "correlation": {
+    "strongest_pairs": [
+      {
+        "col_i": "Vb",
+        "col_j": "Vc",
+        "r": -0.567
+      },
+      {
+        "col_i": "Ib",
+        "col_j": "Ic",
+        "r": -0.5283
+      },
+      {
+        "col_i": "Va",
+        "col_j": "Vb",
+        "r": -0.4802
+      },
+      {
+        "col_i": "Va",
+        "col_j": "Vc",
+        "r": -0.4502
+      },
+      {
+        "col_i": "Ia",
+        "col_j": "Ib",
+        "r": -0.3742
+      }
+    ]
+  }
+}

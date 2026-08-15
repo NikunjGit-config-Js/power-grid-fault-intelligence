@@ -1,0 +1,20 @@
+{
+  "n_exact_duplicates": 0,
+  "n_duplicate_rows_out_of": 7861,
+  "duplicate_percentage": 0.0,
+  "min_pair_distance": 1.6892952388127902,
+  "mean_min_distance": 1.6892952388127902,
+  "near_duplicate_pairs_within_01": -2821,
+  "raw_tree_depth": 138,
+  "raw_tree_leaves": 636,
+  "physics_tree_depth": 16,
+  "physics_tree_leaves": 73,
+  "shallow_tree_accuracy": 0.9151324651998204,
+  "depth3_tree_accuracy": 0.7691962281095645,
+  "depth2_tree_accuracy": 0.5596467594671456,
+  "split_physics_f1_mean": 0.9925528172731466,
+  "split_physics_f1_std": 0.002781683371730694,
+  "avg_lr_improvement": 0.05358479269570424,
+  "target_leakage_check": "PASS - no target indicators in features",
+  "repeated_scenarios_note": "See per-class cluster analysis in Check 7"
+}
