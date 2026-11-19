@@ -114,6 +114,11 @@ A controlled experiment compared feature sets using the same DecisionTreeClassif
 | SVM | 0.0771 | 0.9714 +/- 0.0034 |
 | Logistic Regression | 0.5539 | 0.6001 +/- 0.0231 |
 
+**Test 1 SVM is a failed fit, not a comparable score.** Its confusion matrix in
+`results/test_1/test_1_results.json` assigns all 1,179 test samples to "No Fault" (fault-detection
+recall 0.0). Macro F1 0.0771 is exactly the score of that constant prediction. The cause was not
+investigated; the tuned and cross-validated SVM in Test 4 does not collapse.
+
 ## Neural Network
 
 The deep-learning track uses a Dense MLP (not CNN-LSTM) with the following architecture:
@@ -162,9 +167,14 @@ All metrics are reported as mean +/- std across folds where applicable:
 
 The top tree-based models achieve Macro F1 > 0.99 across all four experimental protocols. Investigation found:
 
-- No duplicates or target leakage in the dataset
+- No exact duplicate rows (checked on all columns and on the six features alone) and no target leakage found
 - Zero false alarms for 4 models across all 5 outer folds
 - Consistent performance between default (Test 3) and tuned (Test 4) configurations
+
+Near-duplicates were **not** measured. Simulation rows from the same fault event are likely
+consecutive, highly similar time samples; a random stratified split can place such neighbours in both
+training and test sets, which would inflate scores. A contiguous-block split would test this and has
+not been run.
 
 These results likely reflect **simulation-driven class separability** in the MATLAB-generated dataset. Simulation data often exhibits deterministic signal structure and clean class boundaries that real-world data would not have. The locked final-test evaluation confirms this pattern with perfect scores, but real-world applicability remains to be validated.
 
@@ -323,6 +333,18 @@ streamlit run app.py
 pip install -r requirements-notebook.txt
 jupyter notebook electrical-fault-detection-and-classification.ipynb
 ```
+
+### Notebook execution status
+
+The reported numbers come from the scripts and JSON files under `results/`. The committed notebooks
+are in different states:
+
+| Notebook | State |
+|---|---|
+| `electrical-fault-detection-and-classification.ipynb` (original) | 25 of 33 code cells executed; saved errors: a CatBoost `AttributeError` and a `FileNotFoundError` for `/kaggle/working/decision_trees_model.pkl` |
+| `results/test_1/test_1_default_models_executed.ipynb` | Executed; cell 1 shows a NumPy `_ARRAY_API not found` error (a package compiled for NumPy 1.x loaded under NumPy 2.x) |
+| `results/feature_engineering/feature_engineering_experiment_executed.ipynb`, `results/test_3/test_3_cv_models_executed.ipynb` | Executed without saved errors |
+| `results/eda/eda_report.ipynb`, `results/test_2/test_2_hyperparameter_tuning.ipynb`, `results/test_4/test_4_nested_cv.ipynb`, `results/comprehensive_evaluation/comprehensive_evaluation.ipynb` | Not executed (no saved outputs) |
 
 ### Tests
 

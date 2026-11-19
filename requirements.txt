@@ -3,7 +3,8 @@
 #  Install with:  pip install -r requirements.txt
 #
 #  These are the minimal direct dependencies for the production inference path.
-#  Versions are pinned to those verified during development.
+#  Only scikit-learn is pinned exactly (the saved pipeline needs that version);
+#  the other packages specify minimum versions only.
 # ============================================================================
 
 # --- frontend ---
